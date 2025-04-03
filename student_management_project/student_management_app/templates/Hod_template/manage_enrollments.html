@@ -1,0 +1,106 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+    Finance Management.
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Course Enrollments and Fees</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Manage Course Enrollments and Fees</h2>
+
+        <h3 class="mt-4">Update Course Fees</h3>
+        <form method="POST" action="{% url 'add_fee' %}" class="mb-4">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="course_id">Select Course:</label>
+                <select name="course_id" class="form-control" required>
+                    {% for course in courses %}
+                    <option value="{{ course.id }}">{{ course.course_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fee_amount">Fee Amount:</label>
+                <input type="number" name="fee_amount" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Fee</button>
+        </form>
+        <marquee style="color:red">Kindly be keen when updating the fee</marquee>
+
+        <!-- Search Form -->
+        <h3 class="mt-4">Search for Students</h3>
+        <form method="GET" action="{% url 'manage_enrollments' %}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search for a student by name" aria-label="Search for a student">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+
+        <h3>View All Students</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Course</th>
+                    <th>Payment Status</th>
+                    <th>Update Payment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.admin.first_name }} {{ student.admin.last_name }}</td>
+                    <td>{{ student.course_id.course_name }}</td>
+                    <td>
+                        {% with payment=student.payment_set.first %}
+                            {% if payment %}
+                                Amount Paid: KSH {{ payment.amount_paid }}
+                            {% else %}
+                                No payment recorded.
+                            {% endif %}
+                        {% endwith %}
+                    </td>
+                    <td>
+                        <form method="POST" action="{% url 'update_payment_status' student.id %}">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input type="number" name="amount_paid" class="form-control" placeholder="Amount Paid" required>
+                                <input type="hidden" name="course_id" value="{{ student.course_id.id }}">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-success">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="text-center">No students found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <p style="text-align: center;"> 
+        Powered by <a href="https://www.linkedin.com/in/Joseph-Ogutu/" target="_blank">Joseph Ogutu</a>
+    </p>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% endblock main_content %}

@@ -1,0 +1,14 @@
+<!-- notifications.html -->
+<script>
+    const socket = new WebSocket('ws://localhost:8000/ws/notifications/');
+
+    socket.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        const notification = data.notification;
+        alert(notification);  // Display the notification (you can customize this)
+    };
+
+    socket.onclose = function(event) {
+        console.error('WebSocket closed unexpectedly');
+    };
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Payment Status</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image" href="{% static 'dist/img/Bell logo.png' %}"/>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Update Payment Status for Student ID: {{ student_id }}</h2>
+
+        <!-- Display success or error messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" action="{% url 'update_payment_status' student_id=student_id %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="course_id">Course ID:</label>
+                <input type="text" class="form-control" id="course_id" name="course_id" required>
+            </div>
+            <div class="form-group">
+                <label for="amount_paid">Amount Paid:</label>
+                <input type="number" class="form-control" id="amount_paid" name="amount_paid" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Payment Status</button>
+        </form>
+
+        <a href="{% url 'manage_enrollments' %}" class="btn btn-secondary mt-3">Back to Manage Enrollments</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

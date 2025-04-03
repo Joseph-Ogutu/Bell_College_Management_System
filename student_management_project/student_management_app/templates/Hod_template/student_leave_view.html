@@ -1,0 +1,159 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+    Leave Apply by Students
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Leave Apply by Students</h3>
+                        </div>
+                        <!-- /.card-header -->
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Leave Date</th>
+                                    <th>Leave Message</th>
+                                    <th>Applied On</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+
+                                <audio id="alertSound" src="Notification.wav" controls  preload="auto"></audio>
+
+                                {% for leave in leaves %}
+                                <tbody>
+                                <tr>
+                                    <td>{{ leave.id }}</td>
+                                    <td>{{ leave.student_id.admin.id }}</td>
+                                    <td>{{ leave.student_id.admin.first_name }} {{ feedback.student_id.admin.last_name }}</td> 
+                                    <td>{{ leave.leave_date }}</td>
+                                    <td>{{ leave.leave_message }}</td>
+                                    <td>{{ leave.created_at }}</td>
+                                    <td>
+                                        {% if leave.leave_status == 0 %}
+                                            <a href="{% url 'student_leave_approve' leave_id=leave.id %}" class="btn btn-success">Approve</a>
+                                            <a href="{% url 'student_leave_reject' leave_id=leave.id %}" class="btn btn-danger">Reject</a>
+                                        {% elif leave.leave_status == 1 %}
+                                            <button class="btn btn-warning" disabled="disabled">Approved</button>
+                                        {% else %}
+                                            <button class="btn btn-danger" disabled="disabled">Rejected</button>
+                                        {% endif %}
+                                        
+                                    </td>
+                                </tr>
+                                </tbody>
+                                {% endfor %}
+
+                            </table>
+                        </div>
+                    
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+            <script>
+                function showNotification(message) {
+                    const notificationContainer = document.getElementById('notification-container');
+                
+                    // Create a new notification element
+                    const notification = document.createElement('div');
+                    notification.className = 'notification';
+                    notification.innerHTML = `
+                        <span>${message}</span>
+                        <button class="close-btn" onclick="closeNotification(this)">✖</button>
+                    `;
+                
+                    // Append the notification to the container
+                    notificationContainer.appendChild(notification);
+                
+                    // Play the alert sound
+                    playSound();
+                
+                    // Trigger the show animation
+                    setTimeout(() => {
+                        notification.classList.add('show');
+                    }, 10);
+                
+                    // Automatically remove the notification after 20 seconds
+                    setTimeout(() => {
+                        closeNotification(notification);
+                    }, 20000);
+                }
+                
+                function playSound() {
+                    var audio = document.getElementById('alertSound');
+                    audio.play().catch(error => {
+                        console.error('Error playing sound:', error);
+                    });
+                }
+                
+                function closeNotification(element) {
+                    const notification = element.parentElement;
+                    notification.classList.remove('show');
+                
+                    // Remove the notification after the fade-out transition
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }
+                
+                function checkForNewLeaves() {
+                    fetch('/api/latest-leaves/')
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.length > 0) {
+                                // Display notification for each new leave application
+                                data.forEach(leave => {
+                                    showNotification(`New leave application from ${leave.student_name} for ${leave.leave_date}: ${leave.leave_message}`);
+                                });
+                            }
+                        })
+                        .catch(error => console.error('Error fetching leave applications:', error));
+                }
+                
+                // Check for new leaves every 10 seconds
+                setInterval(checkForNewLeaves, 10000);
+            </script>
+
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <p style="text-align: center;"> 
+        Powered by <a href="https://www.linkedin.com/in/Joseph-Ogutu/" target="_blank">Joseph Ogutu</a>
+    </p>
+
+    
+
+{% endblock main_content %}
+
+{% comment %} Custom JS to Identify the Reply and Post Reply {% endcomment %}
+
+{% block custom_js %}
+
+{% endblock custom_js %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+    Add Session Year
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Fee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Add Fee to Course</h2>
+
+        <!-- Display success or error messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST" action="{% url 'add_fee' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="course_id">Course ID:</label>
+                <input type="text" class="form-control" id="course_id" name="course_id" required>
+            </div>
+            <div class="form-group">
+                <label for="fee_amount">Fee Amount:</label>
+                <input type="number" class="form-control" id="fee_amount" name="fee_amount" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Fee</button>
+        </form>
+
+        <a href="{% url 'manage_enrollments' %}" class="btn btn-secondary mt-3">Back to Manage Enrollments</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock main_content %}

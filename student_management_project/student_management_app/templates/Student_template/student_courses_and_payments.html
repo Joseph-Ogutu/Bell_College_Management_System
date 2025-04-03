@@ -1,0 +1,76 @@
+<!-- student_template/student_courses_and_payments.html -->
+{% extends 'student_template/base_template.html' %}
+
+{% block page_title %}
+Student Fee Management.
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Your Courses and Payments</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Welcome, {{ request.user.username }}</h2>
+        <h3 class="mt-4 text-center">Below is Your Enrolled Courses.<br>
+            For wrong figures, contact the school Admin to fix.<br>
+            <strong>Incase you want to pay.</strong><br>
+            <span style="color:red">Paybill 247247<br>
+                Account 992065
+            </span><br>
+            <strong style="color:green">Admin will update your fee.</strong><br>
+        </h3>
+        
+        
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Total Fee</th>
+                        <th>Amount Paid</th>
+                        <th>Remaining Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for enrollment in enrollments %}
+                    <tr>
+                        <td>{{ enrollment.course.course_name }}</td>
+                        <td>Ksh.{{ enrollment.course.fee }}</td>
+                        <td>Ksh.{{ enrollment.paid_amount }}</td>
+                        <td>Ksh.{{ enrollment.remaining_amount }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center">You are not enrolled in any courses.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <marquee style="color:black">Just a friendly reminder.Always track your fee Payments, be in contact with the Admin🤜🤛.</marquee>
+    </div><br><br><br>
+
+    <p style="text-align: center;"> 
+        System  by <a href="https://www.linkedin.com/in/Joseph-Ogutu/" target="_blank">Joseph Ogutu</a>
+    </p>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+{% endblock main_content %}
+
+{% block custom_js %}
+
+{% endblock custom_js %}

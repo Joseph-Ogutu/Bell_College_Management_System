@@ -170,12 +170,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # settings.py
 EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
-SENDGRID_API_KEY = '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'  # Replace with your SendGrid API key
+SENDGRID_API_KEY = '#'  # Replace with your SendGrid API key
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'  # This is the username for SendGrid
-EMAIL_HOST_PASSWORD = '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'  # Use the API key as the password
+EMAIL_HOST_PASSWORD = '#'  # Use the API key as the password
 
 
 

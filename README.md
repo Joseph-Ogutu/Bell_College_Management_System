@@ -50,12 +50,6 @@ This project utilizes a variety of technologies to deliver a robust and responsi
 - **Frontend**: HTML, CSS, JavaScript, Bootstrap, jQuery, Ajax
 - **Carousel**: Owl Carousel for enhanced UI components
 
-## Getting Started
 
-To set up the College Management System on your local machine, follow these step
-
-1. **Create a Virtual Environment**: It is recommended to create a virtual environment to manage project dependencies. Install `virtualenv` if you haven't already:
-   ```bash
-   pip install virtualenv
 
    

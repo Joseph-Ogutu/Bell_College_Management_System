@@ -1,6 +1,6 @@
 # Bell College Management System
 
-*Enhancing Education with Streamlined Management Solutions*
+  *Enhancing Education with Streamlined Management Solutions*
 
 - **Last Update**: May
 - **Main Language**: JavaScript (90.7%)
@@ -8,12 +8,13 @@
 
 ## Built with the Tools and Technologies:
 
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/json.png" alt="JSON" style="width: 32px; height: 32px; vertical-align: middle;">
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/markdown.png" alt="Markdown" style="width: 32px; height: 32px; vertical-align: middle;">
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/npm.png" alt="npm" style="width: 32px; height: 32px; vertical-align: middle;">
-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tether_USDT_logo.svg/64px-Tether_USDT_logo.svg.png" alt="Tether" style="width: 32px; height: 32px; vertical-align: middle;">
-- <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python" style="width: 32px; height: 32px; vertical-align: middle;">
-- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/windows.png" alt=".bat" style="width: 32px; height: 32px; vertical-align: middle;">
+- JSON
+- Markdown
+- npm
+- Tether
+- Python
+- .bat
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -31,23 +32,49 @@ The Bell College Management System is a robust Django-based platform crafted to 
 
 This initiative seeks to enhance educational management processes by delivering real-time communication features. Highlighted capabilities include:
 
-- 📊 **Modular Design**: Offers tailored dashboards for students, staff, and admins, providing personalized user interfaces.
-- 💬 **Instant Communication**: Utilizes WebSocket integration via Django Channels for real-time updates and alerts.
+- 🧩 **Modular Architecture** : Supports role-Specific dashboard  for Students, Staffs and Administrators, ensuring Tailored User expiriences.
+- 🚀**Real Time Communication** : Implement WebSockets with Django Channels for instants notifications and Updates.
+- 🔒**Secure Authentication** : Features a Custom Email backend for flexible user login options.
+- 🌐**Deployment Ready** : Support Scalable Deployemnt with ASGI and WSGIconfigurations for productions Environtments.
+- 🎨**UI Templates** : Provides a Consistent, interface for all user roles enhancing usability and engagements. 
 
 ## Getting Started
 
 ### Prerequisites
 
-- [List required software or dependencies here.]
+This Project requires the following dependecies.
+
+- **Programming Language**: HTML5
+- **Package Manager** : Npm
 
 ### Installation
 
-- [Provide installation steps here.]
+Build Bell_College_Management from the source and install the following dependencies.
+
+1.**Clone the Repository**.
+
+  > git clone https:github.com/Joseph-Ogutu/Bell_College_Management_System.
+
+
+2.**Navigate to the Project Directory**.
+
+  > cd Bell_College_Management_System
+
+
+3.**Intall the Dependencies using Npm**.
+
+  > npm install
+
+
 
 ### Usage
 
-- [Describe how to use the system here.]
+Run the Project using npm 
+
+  *npm start*
 
 ### Testing
 
-- [Include testing instructions here.]
+Bell_College_Management_System uses the {test_framework} test framework. Run the test suite with npm.
+
+  *npm test*

@@ -50,6 +50,43 @@ This project utilizes a variety of technologies to deliver a robust and responsi
 - **Frontend**: HTML, CSS, JavaScript, Bootstrap, jQuery, Ajax
 - **Carousel**: Owl Carousel for enhanced UI components
 
+# Bell College Management System
+
+*Empowering Education Through Seamless Management Innovation*
+
+- **Last Commit**: May
+- **Primary Language**: JavaScript (90.7%)
+- **Languages**: 7
+
+## Built with the Tools and Technologies:
+
+- [JSON](#)
+- [Markdown](#)
+- [npm](#)
+- [Tether](#)
+- [Python](#)
+- [.bat](#)
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Testing](#testing)
+
+## Overview
+
+The Bell College Management System is a comprehensive Django-based platform designed to streamline college administration, enhance student engagement, and optimize staff management. It combines robust backend logic with a responsive frontend to enable efficient handling of academic data, including attendance, fees, results, and communication across various roles.
+
+### Why Bell College Management System?
+
+This project aims to simplify educational management workflows while offering real-time communication capabilities. Key features include:
+
+- 📊 **Modular Architecture**: Supports role-specific dashboards for students, staff, and administrators, ensuring customized user experiences.
+- 💬 **Real-Time Communication**: Implements WebSocket integration with Django Channels for instant notifications and updates.
+
 
 
    

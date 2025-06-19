@@ -8,12 +8,12 @@
 
 ## Built with the Tools and Technologies:
 
-- ![JSON](https://via.placeholder.com/32?text=JSON)
-- ![Markdown](https://via.placeholder.com/32?text=Markdown)
-- ![npm](https://via.placeholder.com/32?text=npm)
-- ![Tether](https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tether_USDT_logo.svg/1200px-Tether_USDT_logo.svg.png)
-- ![Python](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
-- ![.bat](https://via.placeholder.com/32?text=.bat)
+- <img src="https://via.placeholder.com/32?text=JSON" alt="JSON" style="width: 32px; height: 32px; vertical-align: middle;">
+- <img src="https://via.placeholder.com/32?text=Markdown" alt="Markdown" style="width: 32px; height: 32px; vertical-align: middle;">
+- <img src="https://via.placeholder.com/32?text=npm" alt="npm" style="width: 32px; height: 32px; vertical-align: middle;">
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tether_USDT_logo.svg/1200px-Tether_USDT_logo.svg.png" alt="Tether" style="width: 32px; height: 32px; vertical-align: middle;">
+- <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python" style="width: 32px; height: 32px; vertical-align: middle;">
+- <img src="https://via.placeholder.com/32?text=.bat" alt=".bat" style="width: 32px; height: 32px; vertical-align: middle;">
 
 ## Table of Contents
 
@@ -52,7 +52,3 @@ This initiative seeks to enhance educational management processes by delivering 
 ### Testing
 
 - [Include testing instructions here.]
-
-
-
-   

@@ -71,10 +71,10 @@ Build Bell_College_Management from the source and install the following dependen
 
 Run the Project using npm 
 
-  *npm start*
+  > npm start
 
 ### Testing
 
 Bell_College_Management_System uses the {test_framework} test framework. Run the test suite with npm.
 
-  *npm test*
+   > npm test

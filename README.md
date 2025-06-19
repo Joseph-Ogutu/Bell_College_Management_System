@@ -8,13 +8,12 @@
 
 ## Built with the Tools and Technologies:
 
-- <img src="https://via.placeholder.com/32?text=JSON" alt="JSON" style="width: 32px; height: 32px; vertical-align: middle;">
-- <img src="https://via.placeholder.com/32?text=Markdown" alt="Markdown" style="width: 32px; height: 32px; vertical-align: middle;">
-- <img src="https://via.placeholder.com/32?text=npm" alt="npm" style="width: 32px; height: 32px; vertical-align: middle;">
-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tether_USDT_logo.svg/1200px-Tether_USDT_logo.svg.png" alt="Tether" style="width: 32px; height: 32px; vertical-align: middle;">
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/json.png" alt="JSON" style="width: 32px; height: 32px; vertical-align: middle;">
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/markdown.png" alt="Markdown" style="width: 32px; height: 32px; vertical-align: middle;">
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/npm.png" alt="npm" style="width: 32px; height: 32px; vertical-align: middle;">
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tether_USDT_logo.svg/64px-Tether_USDT_logo.svg.png" alt="Tether" style="width: 32px; height: 32px; vertical-align: middle;">
 - <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python" style="width: 32px; height: 32px; vertical-align: middle;">
-- <img src="https://via.placeholder.com/32?text=.bat" alt=".bat" style="width: 32px; height: 32px; vertical-align: middle;">
-
+- <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/windows.png" alt=".bat" style="width: 32px; height: 32px; vertical-align: middle;">
 ## Table of Contents
 
 - [Overview](#overview)

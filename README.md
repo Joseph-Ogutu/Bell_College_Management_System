@@ -1,4 +1,4 @@
-#Bell College Management System
+##Bell College Management System
 
 ## Project Summary
 The **College Management System** is a web application developed using Python and Django, designed to streamline the management of educational institutions. 
